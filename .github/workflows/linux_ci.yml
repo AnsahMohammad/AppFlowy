@@ -11,7 +11,6 @@ jobs:
   build-for-linux:
     name: ${{ matrix.job.target }} (${{ matrix.job.os }}) [${{ matrix.job.extra-build-args }}]
     runs-on: ${{ matrix.job.os }}
-    needs: create-release
     env:
       LINUX_APP_RELEASE_PATH: frontend/appflowy_flutter/product/${{ github.ref_name }}/linux/Release
       LINUX_ZIP_NAME: AppFlowy-${{ matrix.job.target }}-x86_64.tar.gz
